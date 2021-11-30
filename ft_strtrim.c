@@ -6,13 +6,13 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:46:29 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/24 15:58:50 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/11/29 16:04:04 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	istrim(char const c, char const *set)
+static size_t	istrim(char const c, char const *set)
 {
 	size_t	i;
 
@@ -23,18 +23,18 @@ size_t	istrim(char const c, char const *set)
 	return (0);
 }
 
-size_t	count(char const *s1, char const *set)
+static size_t	count(char const *s, char const *set)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	j = ft_strlen(s1) - 1;
-	while (s1[i] && istrim(s1[i], set))
+	j = ft_strlen(s) - 1;
+	while (s[i] && istrim(s[i], set))
 		i++;
-	while (istrim(s1[j], set))
+	while (j && istrim(s[j], set))
 		j--;
-	if (i < j)
+	if (i <= j)
 		return (j - i + 1);
 	return (0);
 }
@@ -46,7 +46,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	str = (char *)malloc(count(s1, set) + 1);
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (s1[i] && istrim(s1[i], set))

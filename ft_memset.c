@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:13:27 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/25 15:17:44 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:01:49 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	char	*tmp;
 
 	tmp = s;
-	while (--n)
-		*tmp++ = c;
+	while (n--)
+	{
+		*tmp = c;
+		tmp++;
+	}
 	return (s);
 }

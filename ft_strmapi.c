@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:38:23 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/24 17:47:51 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:05:35 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	dst = (char *)malloc(ft_strlen(s) + 1);
-	if (dst == NULL)
+	if (!dst)
 		return (NULL);
 	i = 0;
 	while (s[i])
@@ -26,5 +26,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		dst[i] = (*f)(i, s[i]);
 		i++;
 	}
+	dst[i] = 0;
 	return (dst);
 }

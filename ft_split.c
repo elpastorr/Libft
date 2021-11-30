@@ -6,24 +6,13 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:45:05 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/26 18:16:34 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/11/29 13:53:59 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_free(char **str)
-{
-	size_t	i;
-
-	i = -1;
-	while (str[++i])
-		free(str[i]);
-	free(str);
-	return (NULL);
-}
-
-size_t	countchar(char const *s, char c)
+static size_t	countchar(char const *s, char c)
 {
 	size_t	i;
 
@@ -33,24 +22,21 @@ size_t	countchar(char const *s, char c)
 	return (i);
 }
 
-size_t	countword(char const *s, char c)
+static size_t	countword(char const *s, char c)
 {
 	size_t	i;
-	size_t	word;
 	size_t	count;
 
-	i = -1;
-	word = 0;
+	i = 0;
 	count = 0;
-	while (s[++i])
+	while (s[i])
 	{
-		if (s[i] != c && !word)
-		{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] != '\0')
 			count++;
-			word = 1;
-		}
-		else if (s[i] == c)
-			word = 0;
+		while (s[i] && s[i] != c)
+			i++;
 	}
 	return (count);
 }
@@ -63,7 +49,7 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 
 	str = (char **)malloc(sizeof(char *) * (countword(s, c) + 1));
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -73,8 +59,6 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c)
 		{
 			str[j] = (char *)malloc(countchar(&s[i], c) + 1);
-			if (str[j] == NULL)
-				return (ft_free(str));
 			while (s[i] && s[i] != c)
 				str[j][k++] = s[i++];
 			str[j++][k] = 0;
