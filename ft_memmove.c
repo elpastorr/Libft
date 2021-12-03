@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:48:02 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/26 15:05:48 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/12/02 16:13:13 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	d = (char *)dst;
 	s = (char *)src;
-	if (!dst || !src)
+	if (!dst && !src)
 		return (NULL);
 	if (d > s)
 	{

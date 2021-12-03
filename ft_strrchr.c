@@ -6,13 +6,13 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:57:38 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/26 16:57:28 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/11/30 15:34:08 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	findnext(char *s, int c)
+static int	findnext(char *s, int c)
 {
 	s++;
 	while (*s)

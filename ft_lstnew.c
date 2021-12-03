@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:30:30 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/29 17:38:57 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:40:41 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
+	return (new);
 }

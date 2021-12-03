@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:28:17 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/24 18:42:28 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/12/02 15:30:54 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (!s)
+		return ;
 	i = -1;
 	while (s[++i])
 		write(fd, &s[i], 1);

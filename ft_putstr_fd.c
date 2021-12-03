@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:24:11 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/24 18:42:39 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/12/02 15:30:06 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (!s)
+		return ;
 	i = -1;
 	while (s[++i])
 		write(fd, &s[i], 1);

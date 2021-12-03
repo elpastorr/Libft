@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:18:03 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/24 14:30:14 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/12/02 15:27:51 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	j;
 	char	*dst;
 
+	if (!s1 || !s2)
+		return (NULL);
 	dst = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (dst == NULL)
 		return (NULL);

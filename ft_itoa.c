@@ -6,13 +6,13 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:09:04 by elpastor          #+#    #+#             */
-/*   Updated: 2021/11/25 14:43:52 by elpastor         ###   ########.fr       */
+/*   Updated: 2021/11/30 15:34:40 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_norm(int n, char *s)
+static unsigned int	ft_norm(int n, char *s)
 {
 	if (n < 0)
 	{
@@ -23,7 +23,7 @@ unsigned int	ft_norm(int n, char *s)
 		return (n);
 }
 
-size_t	len_nb(int n)
+static size_t	len_nb(int n)
 {
 	size_t	count;
 
